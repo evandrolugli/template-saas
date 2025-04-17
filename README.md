@@ -3,6 +3,7 @@
 - Auth.js
     - npx auth secret
 - Auth Google
+- Firebase
 
 
 ## Getting Started
