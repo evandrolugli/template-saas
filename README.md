@@ -4,6 +4,9 @@
     - npx auth secret
 - Auth Google
 - Firebase
+- Stripe
+    - stripe payments
+    - stripe subscription
 
 
 ## Getting Started

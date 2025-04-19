@@ -2,6 +2,7 @@ import { auth } from "@/app/lib/auth";
 
 import { handleAuth } from "@/app/actions/handle-auth";
 import { redirect } from "next/navigation"
+import Link from "next/link";
 
 export default async function Dashboard() {
 
@@ -23,6 +24,7 @@ export default async function Dashboard() {
                     </button>
                 </form>
             )}
+            <Link href="/payments">Payments</Link>
         </div>
     );
 }
