@@ -7,6 +7,7 @@
 - Stripe
     - stripe payments
     - stripe subscription
+    - stripe portal
 
 
 ## Getting Started

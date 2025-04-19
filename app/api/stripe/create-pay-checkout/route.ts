@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 // hacker possibility - do not pass the price
 export async function POST(req: NextRequest) {
-    console.log("func : Post")
-
     const { testId, userEmail } = await req.json();
 
     const price = process.env.STRIPE_PRODUCT_PRICE_ID;

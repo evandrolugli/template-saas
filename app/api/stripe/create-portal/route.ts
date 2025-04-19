@@ -26,15 +26,20 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "Customer not found"}, { status: 404 });
         }
 
+        const origin = req.headers.get("origin") || "http://localhost:3000";
+
         const portalSession = await stripe.billingPortal.sessions.create({
             customer: customerId,
-            return_url: `${req.headers.get("origin")}/dashboard`,
+            return_url: `${origin}/dashboard`,
         })
 
         return NextResponse.json({ url: portalSession.url }, { status: 200 });
 
     } catch (error) {
-        console.error(error);
-        return NextResponse.error();
+        console.error("Error creating Stripe portal:", error);
+        return NextResponse.json(
+            { error: "Portal creation failed", details: (error as Error).message },
+            { status: 500 }
+        );
     }
 }

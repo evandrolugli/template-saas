@@ -15,7 +15,7 @@ export default function Payments() {
             <button className="border rounded-md px-1" onClick={() => createSubscriptionStripeCheckout({ testId: "123" })}>
                 Create Stripe Subscription
             </button>
-            <button className="border rounded-md px-1" onClick={() => handleCreateStripePortal}>
+            <button className="border rounded-md px-1" onClick={() => handleCreateStripePortal()}>
                 Create Portal Payment
             </button>
         </div>

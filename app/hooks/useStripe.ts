@@ -75,6 +75,7 @@ export function useStripe(){
         }
     }
 
+    
     async function handleCreateStripePortal(){
         const response = await fetch("/api/stripe/create-portal", {
             method: "POST",
@@ -83,7 +84,18 @@ export function useStripe(){
             },
         });
 
+        if (!response.ok) {
+            const text = await response.text();
+            console.error("Portal creation failed:", text);
+            return;
+        }
+
         const data = await response.json();
+
+        if (!data?.url) {
+            console.error("No portal URL returned");
+            return;
+        }
         
         window.location.href = data.url;
     }
