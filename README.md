@@ -8,6 +8,7 @@
     - stripe payments
     - stripe subscription
     - stripe portal
+    - stripe cancel subscription
 
 
 ## Getting Started
