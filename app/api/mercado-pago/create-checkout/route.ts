@@ -13,6 +13,7 @@ export async function POST(req: NextRequest){
                 external_reference: testId, // important to the rating points
                 metadata: {
                     testId, // this var is converted to snake_case -> test_id
+                    userEmail,
                 },
                 ...(userEmail && { payer: { email: userEmail}}), // important to the rating points
                 items: [
@@ -47,9 +48,9 @@ export async function POST(req: NextRequest){
                 },
                 auto_return: "approved",
                 back_urls: {
-                    success: `${process.env.NEXT_PUBLIC_APP_URL}/api/mercado-pago/success`,
-                    failure: `${process.env.NEXT_PUBLIC_APP_URL}/api/mercado-pago/failure`,
-                    pending: `${process.env.NEXT_PUBLIC_APP_URL}/api/mercado-pago/pending`
+                    success: `${req.headers.get("origin")}/api/mercado-pago/success`,
+                    failure: `${req.headers.get("origin")}/api/mercado-pago/failure`,
+                    pending: `${req.headers.get("origin")}/api/mercado-pago/pending`
                 },
             }
         });

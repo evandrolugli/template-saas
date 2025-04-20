@@ -11,6 +11,10 @@
     - stripe cancel subscription
 
 
+Improvements:
+- MP : associate PIX (cpf, email, mobile) in your Mercado Pago account
+- MP Test : MFA, last 6 digits - id or token
+
 ## Getting Started
 
 First, run the development server:
