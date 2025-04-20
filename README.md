@@ -8,6 +8,7 @@
     - stripe subscription
     - stripe portal
     - stripe cancel subscription
+- Mercado Pago
 
 ### Improvements:
 - MP : associate PIX (cpf, email, mobile) in your Mercado Pago account
